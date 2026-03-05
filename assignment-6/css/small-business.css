@@ -1,0 +1,68 @@
+/*!
+ * Start Bootstrap - Small Business (https://startbootstrap.com/template-overviews/small-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.testimonial-text {
+  color: white;
+}
+
+.btn{
+  background-color: darkblue;
+  border-color: darkblue;
+  color: white;
+}
+
+.btn:hover{
+  background-color: blue;
+  border-color: blue;
+  color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #f8f9fa; /* lighter than default */
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sr-only-focusable:focus {
+  top: 0;
+  left: 0;
+  color: #000;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+
+.sr-only-focusable {
+  top: 0;
+  left: 0;
+  color: #000;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+
+.btn:focus,
+.btn.focus {
+  outline: 3px solid #000000;   /* strong visible focus */
+  outline-offset: 2px;
+  box-shadow: none;             /* removes blue glow */
+}
