@@ -1,0 +1,129 @@
+#formstart {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:200%;
+	font-weight:bold;
+}
+
+.outline3 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:150%;
+	font-weight:bold;
+}
+
+.outline4 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:120%;
+	font-weight:bold;
+}
+
+body{
+    line-height:1;
+    margin:40px;
+    max-width:900px;
+}
+
+/* headings */
+h1{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+h2{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size:1.5rem;
+    margin-top:35px;
+}
+
+
+/* instructions box */
+
+.instructions{
+    background:#f5f5f5;
+    border-left:5px solid #333;
+    padding:12px;
+    margin-bottom:25px;
+}
+
+/* fieldsets */
+
+fieldset{
+    border:1px solid #bbb;
+    padding:20px;
+    margin-bottom:30px;
+}
+
+legend{
+    font-weight:bold;
+    padding:0 8px;
+}
+
+/* form rows and labels */
+
+ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+li{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+
+
+label{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+/* inputs */
+
+input{
+    padding:4px;
+    font-size:1rem;
+    border:1px solid #888;
+    border-radius:4px;
+    max-width:500px;
+}
+
+textarea{
+    padding:4px;
+    font-size:1rem;
+    border:1px solid #888;
+    border-radius:4px;
+    max-width:500px;
+	display: block;
+}
+
+/* radio button group */
+
+.oneques span{
+    margin-right:20px;
+}
+
+/* submit button */
+
+button{
+margin-top:20px;
+padding:10px 18px;
+font-size:1rem;
+cursor:pointer;
+}
+
+/* keyboard focus visibility */
+
+input:focus,
+textarea:focus,
+input[type="submit"]:focus{
+    outline:3px solid #005fcc;
+    outline-offset:2px;
+}
+
+/* required asterick */
+
+.star{
+    color:#b30000;
+    font-weight:bold;
+}
