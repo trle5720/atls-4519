@@ -1,0 +1,52 @@
+/* Improve contrast */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* Accessible links */
+a {
+  color: #004aad;
+}
+
+a:focus, button:focus, input:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* Navbar contrast */
+.navbar {
+  background-color: #002b5c;
+}
+
+.navbar a {
+  color: #ffffff !important;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #004aad;
+  border-color: #004aad;
+}
+
+.btn-primary:hover {
+  background-color: #003080;
+}
+
+/* Form spacing */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Improve readability */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
