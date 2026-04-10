@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Home | Girls With Books</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../styles/styles.css">
 </head>
@@ -15,11 +14,13 @@
 
 <!-- NAV -->
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <img src="../assets/girls-with-books-logo.avif" alt="Girls With Books Logo">
-    <a class="navbar-brand text-black" href="home.html">Girls With Books</a>
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="home.html">
+      <img src="../assets/girls-with-books-logo.avif" alt="Girls With Books Logo">
+      Girls With Books
+    </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -33,80 +34,83 @@
       </ul>
     </div>
   </div>
+  </div>
 </nav>
 
-<!-- HERO SECTION -->
-<div class="hero">
-  <div class="hero-content">
-
-    <p class="announcement">
-      Want to support Girls With Books! on Colorado Gives Day? Give to Project Education South Sudan and 100% of donations will go to the newly merged organization. Early giving is now open!
-    </p>
-
-    <p class="text-center">
-      <a href="https://www.coloradogives.org/organization/Girlswithbooks" class="fw-bold">Found out more here</a>
-    </p>
-
-    <main id="main">
-
-      <h1 class="text-center">Introducing...Girls With Books!</h1>
-
-      <div class="content-grid mt-4">
-
-        <div>
-          <p>
-            We are pleased to announce that Empowerment Through Education Foundation (ETE)
-            and Project Education South Sudan (PESS) have joined together to operate as one
-            organization, known as Girls With Books!, effective October 1, 2022.
-          </p>
-
-          <p>
-            The merger of two small but effective organizations allows us to help more South
-            Sudanese girls and young women obtain an education. We combine the board member experience
-             of two organizations who have each operated for 17 years in Sudan, and after independence, South Sudan. 
-             Since we have operated in different geographic areas of the country, we will now expand our reach. 
-             We will work in three locations: Bor, the capital of Jonglei state, Juba, the national capital of South Sudan, 
-             and in the refugee camps of northern Uganda, where over 800,000 South Sudanese have fled to escape unrest in their own country.
-          </p>
-
-          <p>
-            The merger will allow us to streamline and unify programs under the leadership of Executive Director Micklina Kenyi, 
-            who came to the US at the age of 24 as a war refugee in 2004, became a US citizen in 2008 and received her master’s
-             degree from CU in Educational Foundation Policy and Practice in 2014. Daniel Gai - who helped found PESS and who 
-             has served in a leadership role for many years - will also continue working with the organization from Bor, South Sudan, 
-             where he lives with his family. A well-established network created by both ETE and PESS will continue to assist 
-             the efforts of Girls With Books!, both in the Denver area and in South Sudan and Uganda.
-          </p>
-
-          <p>
-            The mission of Girls With Books! is to educate South Sudanese girls and young women to become peacebuilders and positive 
-            change-makers in South Sudan. We will focus on educating girls from many of the 64 ethnic groups in the country, bringing 
-            them together to help build peace where there has often been conflict. The combined effect of hundreds of girls graduating from 
-            school and taking their place as leaders in their community will have a powerful effect on the future of this young nation.
-          </p>
-            We thank all of you who have contributed generous amounts of both time and financial support to ETE and PESS over the 
-            past 17 years. We honor your service and your gifts and we ask for your continued support as we continue this great 
-            effort under the name Girls With Books! We are excited to share this happy news with you and we will reach out with 
-            additional information soon.
-          <p>
-
-          </p>
-        </div>
-
-        <div>
-          <img src="../assets/micklina.avif" 
-               alt="Portrait of Executive Director Micklina Kenyi">
-        </div>
-
-      </div>
-
-    </main>
-
+<!-- HERO IMAGE with wave bottom -->
+<div class="hero-wrap">
+  <img src="../assets/gwb-background.avif" alt="South Sudanese girls studying in a classroom" class="hero-img">
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C360,90 1080,0 1440,50 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
   </div>
 </div>
 
-<footer class="text-center p-3">
-  <p>&copy; 2026 Girls With Books</p>
+<main id="main">
+
+  <!-- HEADING SECTION -->
+  <section class="heading-section">
+    <h1>Empowering South Sudanese Girls Through Education</h1>
+    <p class="subtitle">
+      Empowerment Through Education Foundation (ETE) and Project Education South Sudan (PESS) will join together
+      and operate as one organization, known as Girls With Books!
+    </p>
+  </section>
+
+  <!-- TWO ORG CARDS -->
+  <section class="cards-section">
+    <div class="org-card">
+      <h2>Empowerment Through Education Foundation</h2>
+      <p>The Empowerment Through Education Foundation works closely with schools, families and refugee camps to send girls to safe boarding schools where they can thrive.</p>
+    </div>
+    <div class="org-card">
+      <h2>Project Education South Sudan</h2>
+      <p>Project Education South Sudan has been finding ways to fulfill our mission in the fast-changing environment of South Sudan.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT ROW 1: text left, image right -->
+  <section class="content-row">
+    <div class="text-block">
+      <p>Girls With Books merges two 17-year-old organizations that expands educational support for South Sudanese girls and young women across Bor, Juba, and refugee camps in northern Uganda. We hope to broaden our geographic reach to serve the 800,000+ South Sudanese who have fled to Uganda.</p>
+      <p>Led by Executive Director Micklina Kenyi, a former war refugee turned US citizen, earned her master's in Educational Foundation Policy and Practice from CU. Along side Daniel Gai, a co-founder who will continue leading efforts on the ground in Bor, they will streamline the organizations' existing networks in Denver, South Sudan, and Uganda will support the newly unified Girls With Books!</p>
+    </div>
+    <div class="blob-wrap">
+      <img src="../assets/classroom.jpg" alt="Students in a South Sudan classroom" class="blob-img blob-right">
+    </div>
+  </section>
+
+  <!-- CONTENT ROW 2: image left, text right -->
+  <section class="content-row reverse">
+    <div class="blob-wrap">
+      <img src="../assets/micklina.avif" alt="Portrait of Executive Director Micklina Kenyi" class="blob-img blob-left">
+    </div>
+    <div class="text-block">
+      <p>Girls With Books! aims to educate girls from across South Sudan's 64 ethnic groups, uniting them as peacebuilders and community leaders. By bringing together girls from communities that have historically been in conflict, the organization believes that hundreds of educated female graduates will create a powerful, lasting impact on the future of the young nation.</p>
+      <p>We are deeply grateful to everyone who has contributed their time and financial support to ETE and PESS over the past 17 years. We honor your dedication and generosity, and we invite you to continue supporting us as we move forward together under our new name, Girls With Books! We are thrilled to share this exciting news and look forward to reaching out with more details soon.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="../assets/girls-with-books-logo.avif" alt="Girls With Books Logo" class="footer-logo">
+      <div class="footer-contact">
+        <p>info@girlswithbooks.org</p>
+        <p>720-447-4032</p>
+        <p>P.O. Box 57<br>Boulder, CO 80306</p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>Educating South Sudanese girls and young women to become peacebuilders and positive change-makers in South Sudan.</p>
+    </div>
+  </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
