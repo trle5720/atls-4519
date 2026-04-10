@@ -40,9 +40,7 @@
 
     <!-- Logo + org name -->
     <div class="donate-header">
-      <img src="../assets/girls-with-books-logo.avif" alt="Girls With Books Logo" class="donate-logo">
-      <h1 class="donate-org-name">Girls With Books!</h1>
-      <p class="donate-tagline">Educating South Sudanese girls and young women to become peacebuilders and positive change-makers in South Sudan.</p>
+      <img src="../assets/girls-with-books.png" alt="Girls With Books Logo" class="donate-logo">
     </div>
 
     <h2 class="donate-thank-you">Thank you for your support!</h2>
@@ -61,14 +59,14 @@
         <input type="hidden" name="frequency" id="frequencyInput" value="oneTime">
       </div>
 
-      <!-- Amount buttons -->
+      <!-- Amount buttons — roving tabindex + arrow key nav -->
       <div class="donate-field-group">
-        <div class="amount-grid" role="group" aria-label="Select donation amount">
-          <button type="button" class="amount-btn" onclick="setAmount(25)">$25</button>
-          <button type="button" class="amount-btn active" onclick="setAmount(50)">✓ $50</button>
-          <button type="button" class="amount-btn" onclick="setAmount(100)">$100</button>
-          <button type="button" class="amount-btn" onclick="setAmount(500)">$500</button>
-          <button type="button" class="amount-btn" onclick="setAmount('other')">Other</button>
+        <div class="amount-grid" role="radiogroup" aria-label="Select donation amount" id="amountGroup">
+          <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="25"    tabindex="-1">$25</button>
+          <button type="button" class="amount-btn active" role="radio" aria-checked="true"  data-value="50"    tabindex="0">✓ $50</button>
+          <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="100"   tabindex="-1">$100</button>
+          <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="500"   tabindex="-1">$500</button>
+          <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="other" tabindex="-1">Other</button>
         </div>
         <input type="hidden" name="amount" id="amountInput" value="50">
         <div id="customAmountWrap" class="custom-amount-wrap" hidden>
@@ -79,8 +77,8 @@
 
       <!-- Dedication -->
       <div class="donate-field-group">
-        <button type="button" class="dedication-link" onclick="toggleDedication()">
-          <span class="dedication-icon">ℹ</span> Add a dedication
+        <button type="button" class="dedication-link" onclick="toggleDedication()" aria-expanded="false" id="dedicationToggle">
+          <span class="dedication-icon" aria-hidden="true">ℹ</span> Add a dedication
         </button>
         <div id="dedicationWrap" hidden>
           <label for="dedication" class="donate-label mt-3">Dedication message</label>
@@ -94,32 +92,135 @@
         <div class="name-row">
           <div class="donate-field">
             <label for="firstName" class="donate-label">First name <span class="required">*</span></label>
-            <input type="text" id="firstName" name="firstName" class="donate-input" required>
+            <input type="text" id="firstName" name="firstName" class="donate-input" required autocomplete="given-name">
           </div>
           <div class="donate-field">
             <label for="lastName" class="donate-label">Last name <span class="required">*</span></label>
-            <input type="text" id="lastName" name="lastName" class="donate-input" required>
+            <input type="text" id="lastName" name="lastName" class="donate-input" required autocomplete="family-name">
           </div>
         </div>
-
         <div class="donate-check">
           <input type="checkbox" id="isBusiness" name="isBusiness">
           <label for="isBusiness">This is a business/organization donation</label>
         </div>
-
         <div class="name-row">
           <div class="donate-field">
             <label for="email" class="donate-label">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" class="donate-input" required>
+            <input type="email" id="email" name="email" class="donate-input" required autocomplete="email">
           </div>
           <div class="donate-field">
             <label for="phone" class="donate-label">Phone number <span class="optional">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" class="donate-input">
+            <input type="tel" id="phone" name="phone" class="donate-input" autocomplete="tel">
           </div>
         </div>
       </div>
 
-      <button type="submit" class="donate-submit">Complete Donation</button>
+      <!-- Address -->
+      <div class="donate-field-group">
+        <p class="donate-section-label">Address</p>
+
+        <div class="donate-field" style="margin-bottom:12px;">
+          <label for="address1" class="donate-label">Address <span class="required">*</span></label>
+          <input type="text" id="address1" name="address1" class="donate-input" required autocomplete="address-line1">
+        </div>
+
+        <button type="button" class="dedication-link" onclick="toggleAddress2()" aria-expanded="false" id="address2Toggle">
+          <span class="dedication-icon" aria-hidden="true">ℹ</span> add address 2
+        </button>
+        <div id="address2Wrap" hidden style="margin-top:8px; margin-bottom:4px;">
+          <label for="address2" class="donate-label">Address 2</label>
+          <input type="text" id="address2" name="address2" class="donate-input" autocomplete="address-line2">
+        </div>
+
+        <div class="address-row">
+          <div class="donate-field">
+            <label for="city" class="donate-label">City <span class="required">*</span></label>
+            <input type="text" id="city" name="city" class="donate-input" required autocomplete="address-level2">
+          </div>
+          <div class="donate-field">
+            <label for="state" class="donate-label">State/Province <span class="required">*</span></label>
+            <select id="state" name="state" class="donate-input donate-select" required autocomplete="address-level1">
+              <option value="">Select a state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option selected>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+          </div>
+          <div class="donate-field">
+            <label for="zip" class="donate-label">Zip/Postal code <span class="required">*</span></label>
+            <input type="text" id="zip" name="zip" class="donate-input" required autocomplete="postal-code">
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment method -->
+      <div class="donate-field-group">
+        <p class="donate-section-label">Select your payment method <span class="required">*</span></p>
+        <div class="payment-options" role="radiogroup" aria-label="Payment method">
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="credit" checked>
+            <span class="payment-label">Credit card</span>
+            <span class="payment-logos">
+              <span class="pay-badge visa">VISA</span>
+              <span class="pay-badge mc">MC</span>
+              <span class="pay-badge discover">DISC</span>
+              <span class="pay-badge amex">AMEX</span>
+            </span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="paypal">
+            <span class="payment-label">PayPal</span>
+            <span class="payment-logos">
+              <span class="pay-badge paypal">P PayPal</span>
+            </span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="venmo">
+            <span class="payment-label">Venmo</span>
+            <span class="payment-logos">
+              <span class="pay-badge venmo">venmo</span>
+            </span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" value="bank">
+            <span class="payment-label">Bank account</span>
+            <span class="payment-logos">
+              <span class="pay-badge bank">🏛</span>
+            </span>
+          </label>
+
+        </div>
+
+        <div class="donate-check" style="margin-top:16px;">
+          <input type="checkbox" id="sameAddress" name="sameAddress" checked>
+          <label for="sameAddress">My billing and contact addresses are the same</label>
+        </div>
+      </div>
+
+      <!-- Make the most -->
+      <div class="donate-field-group">
+        <p class="donate-section-label">Make the most of my donation</p>
+        <div class="donate-check">
+          <input type="checkbox" id="coverFees" name="coverFees">
+          <label for="coverFees">I want to add $1.50 to my monthly donation to help offset processing fees, so 100% of my contribution can benefit the organization.</label>
+        </div>
+      </div>
+
+      <button type="submit" class="donate-submit">Review Donation</button>
 
     </form>
   </div>
@@ -144,23 +245,71 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  /* ── Frequency toggle ── */
   function setFrequency(val) {
     document.getElementById('frequencyInput').value = val;
     document.getElementById('btnOneTime').classList.toggle('active', val === 'oneTime');
     document.getElementById('btnMonthly').classList.toggle('active', val === 'monthly');
   }
 
-  function setAmount(val) {
-    document.getElementById('amountInput').value = val;
-    document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    const customWrap = document.getElementById('customAmountWrap');
-    customWrap.hidden = (val !== 'other');
+  /* ── Amount buttons: roving tabindex + arrow key navigation ── */
+  const amountGroup = document.getElementById('amountGroup');
+  const amountBtns  = Array.from(amountGroup.querySelectorAll('.amount-btn'));
+
+  function getLabel(btn) {
+    const val = btn.dataset.value;
+    return val === 'other' ? 'Other' : '$' + val;
   }
 
+  function selectAmount(btn) {
+    // Deselect all
+    amountBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
+      b.setAttribute('tabindex', '-1');
+      b.textContent = getLabel(b);
+    });
+    // Select this one
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    btn.setAttribute('tabindex', '0');
+    btn.textContent = '✓ ' + getLabel(btn);
+    btn.focus();
+
+    document.getElementById('amountInput').value = btn.dataset.value;
+    document.getElementById('customAmountWrap').hidden = btn.dataset.value !== 'other';
+  }
+
+  amountBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => selectAmount(btn));
+    btn.addEventListener('keydown', e => {
+      let target = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        target = amountBtns[(i + 1) % amountBtns.length];
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        target = amountBtns[(i - 1 + amountBtns.length) % amountBtns.length];
+      }
+      if (target) {
+        e.preventDefault();
+        selectAmount(target);
+      }
+    });
+  });
+
+  /* ── Dedication toggle ── */
   function toggleDedication() {
-    const wrap = document.getElementById('dedicationWrap');
-    wrap.hidden = !wrap.hidden;
+    const wrap   = document.getElementById('dedicationWrap');
+    const toggle = document.getElementById('dedicationToggle');
+    wrap.hidden  = !wrap.hidden;
+    toggle.setAttribute('aria-expanded', String(!wrap.hidden));
+  }
+
+  /* ── Address 2 toggle ── */
+  function toggleAddress2() {
+    const wrap   = document.getElementById('address2Wrap');
+    const toggle = document.getElementById('address2Toggle');
+    wrap.hidden  = !wrap.hidden;
+    toggle.setAttribute('aria-expanded', String(!wrap.hidden));
   }
 </script>
 </body>

@@ -27,7 +27,7 @@ input:focus {
 }
 
 .navbar-brand {
-  color: #1a1a1a !important;
+  color: #1a3068 !important;
   font-family: Georgia, serif;
   font-size: 1.1rem;
   font-weight: bold;
@@ -42,8 +42,8 @@ input:focus {
 }
 
 .navbar .nav-link {
-  color: #1a1a1a !important;
-  font-family: Arial, sans-serif;
+  color: #1a3068 !important;
+  font-family: Georgia, serif;
   font-size: 0.95rem;
   font-weight: 400;
   padding: 6px 18px !important;
@@ -533,4 +533,86 @@ textarea.donate-input { resize: vertical; }
   .name-row { grid-template-columns: 1fr; }
   .amount-grid { gap: 8px; }
   .amount-btn { flex: 1 1 60px; }
+}
+
+/* ── Address row (3 cols) ── */
+.address-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* ── Payment options ── */
+.payment-options {
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e8e8e8;
+  cursor: pointer;
+  margin: 0;
+  transition: background 0.15s;
+}
+
+.payment-option:last-child { border-bottom: none; }
+.payment-option:hover { background: #f8f8f8; }
+
+.payment-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #1a3068;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.payment-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a3068;
+  flex: 1;
+}
+
+.payment-logos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Card brand badges */
+.pay-badge {
+  font-family: Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+.pay-badge.visa     { background: #1a1f71; color: #fff; }
+.pay-badge.mc       { background: #eb001b; color: #fff; }
+.pay-badge.discover { background: #ff6600; color: #fff; }
+.pay-badge.amex     { background: #2e77bc; color: #fff; }
+.pay-badge.paypal   { background: #003087; color: #fff; font-size: 0.75rem; padding: 3px 8px; }
+.pay-badge.venmo    { background: #3d95ce; color: #fff; font-size: 0.8rem; padding: 3px 8px; letter-spacing: 0.04em; }
+.pay-badge.bank     { background: #f0f0f0; color: #555; font-size: 1rem; padding: 2px 6px; }
+
+/* Select input */
+.donate-select {
+  appearance: auto;
+  cursor: pointer;
+}
+
+/* Responsive additions */
+@media (max-width: 600px) {
+  .address-row {
+    grid-template-columns: 1fr;
+  }
 }
