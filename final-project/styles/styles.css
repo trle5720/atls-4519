@@ -307,10 +307,11 @@ input:focus {
 .donate-header {
   text-align: center;
   margin-bottom: 32px;
+
 }
 
 .donate-logo {
-  height: 120px;
+  height: 400px;
   width: auto;
   margin-bottom: 12px;
 }
