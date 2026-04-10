@@ -10,7 +10,7 @@
 
 <body class="donate-page">
 
-<a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+<a href="#main-content" class="visually-hidden-focusable" style="color:white">Skip to main content</a>
 
 <!-- NAV -->
 <nav class="navbar navbar-expand-lg">
@@ -38,32 +38,32 @@
 <main id="main-content" class="donate-main">
   <div class="donate-card">
 
-    <!-- Logo + org name -->
     <div class="donate-header">
-      <img src="../assets/girls-with-books.png" alt="Girls With Books Logo" class="donate-logo">
+      <img src="../assets/girls-with-books.png" alt="Girls With Books Full Logo" class="donate-logo">
     </div>
 
     <h2 class="donate-thank-you">Thank you for your support!</h2>
 
     <form id="donateForm">
 
-      <!-- Frequency toggle -->
-      <div class="donate-field-group">
-        <label class="donate-label">I want to give <span class="required">*</span></label>
-        <div class="frequency-toggle" role="group" aria-label="Donation frequency">
+      <!-- Donation frequency -->
+      <fieldset class="donate-field-group">
+        <legend class="donate-label">I want to give <span class="required">*</span></legend>
+        <div class="frequency-toggle">
           <button type="button" class="freq-btn active" id="btnOneTime" onclick="setFrequency('oneTime')">One-time</button>
           <button type="button" class="freq-btn" id="btnMonthly" onclick="setFrequency('monthly')">
             <span aria-hidden="true">❤️</span> Monthly
           </button>
         </div>
         <input type="hidden" name="frequency" id="frequencyInput" value="oneTime">
-      </div>
+      </fieldset>
 
-      <!-- Amount buttons — roving tabindex + arrow key nav -->
-      <div class="donate-field-group">
+      <!-- Donation amount -->
+      <fieldset class="donate-field-group">
+        <legend class="donate-label">Select donation amount <span class="required">*</span></legend>
         <div class="amount-grid" role="radiogroup" aria-label="Select donation amount" id="amountGroup">
           <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="25"    tabindex="-1">$25</button>
-          <button type="button" class="amount-btn active" role="radio" aria-checked="true"  data-value="50"    tabindex="0">✓ $50</button>
+          <button type="button" class="amount-btn active" role="radio" aria-checked="true"  data-value="50"    tabindex="0">&#10003; $50</button>
           <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="100"   tabindex="-1">$100</button>
           <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="500"   tabindex="-1">$500</button>
           <button type="button" class="amount-btn" role="radio" aria-checked="false" data-value="other" tabindex="-1">Other</button>
@@ -73,22 +73,23 @@
           <label for="customAmount" class="donate-label mt-3">Enter amount ($)</label>
           <input type="number" id="customAmount" name="customAmount" class="donate-input" min="1" placeholder="0.00">
         </div>
-      </div>
+      </fieldset>
 
-      <!-- Dedication -->
-      <div class="donate-field-group">
+      <!-- Dedication (optional) -->
+      <fieldset class="donate-field-group">
+        <legend class="donate-label">Dedication <span class="optional">(optional)</span></legend>
         <button type="button" class="dedication-link" onclick="toggleDedication()" aria-expanded="false" id="dedicationToggle">
-          <span class="dedication-icon" aria-hidden="true">ℹ</span> Add a dedication
+          <span class="dedication-icon" aria-hidden="true">i</span> Add a dedication
         </button>
         <div id="dedicationWrap" hidden>
           <label for="dedication" class="donate-label mt-3">Dedication message</label>
           <textarea id="dedication" name="dedication" class="donate-input" rows="3" placeholder="In honor of..."></textarea>
         </div>
-      </div>
+      </fieldset>
 
-      <!-- Personal info -->
-      <div class="donate-field-group">
-        <p class="donate-section-label">Tell us about yourself</p>
+      <!--  Personal info -->
+      <fieldset class="donate-field-group">
+        <legend class="donate-section-label">Tell us about yourself</legend>
         <div class="name-row">
           <div class="donate-field">
             <label for="firstName" class="donate-label">First name <span class="required">*</span></label>
@@ -113,11 +114,11 @@
             <input type="tel" id="phone" name="phone" class="donate-input" autocomplete="tel">
           </div>
         </div>
-      </div>
+      </fieldset>
 
       <!-- Address -->
-      <div class="donate-field-group">
-        <p class="donate-section-label">Address</p>
+      <fieldset class="donate-field-group">
+        <legend class="donate-section-label">Address</legend>
 
         <div class="donate-field" style="margin-bottom:12px;">
           <label for="address1" class="donate-label">Address <span class="required">*</span></label>
@@ -125,7 +126,7 @@
         </div>
 
         <button type="button" class="dedication-link" onclick="toggleAddress2()" aria-expanded="false" id="address2Toggle">
-          <span class="dedication-icon" aria-hidden="true">ℹ</span> add address 2
+          <span class="dedication-icon" aria-hidden="true">i</span> Add address 2
         </button>
         <div id="address2Wrap" hidden style="margin-top:8px; margin-bottom:4px;">
           <label for="address2" class="donate-label">Address 2</label>
@@ -161,12 +162,12 @@
             <input type="text" id="zip" name="zip" class="donate-input" required autocomplete="postal-code">
           </div>
         </div>
-      </div>
+      </fieldset>
 
       <!-- Payment method -->
-      <div class="donate-field-group">
-        <p class="donate-section-label">Select your payment method <span class="required">*</span></p>
-        <div class="payment-options" role="radiogroup" aria-label="Payment method">
+      <fieldset class="donate-field-group">
+        <legend class="donate-section-label">Select your payment method <span class="required">*</span></legend>
+        <div class="payment-options">
 
           <label class="payment-option">
             <input type="radio" name="payment" value="credit" checked>
@@ -199,7 +200,7 @@
             <input type="radio" name="payment" value="bank">
             <span class="payment-label">Bank account</span>
             <span class="payment-logos">
-              <span class="pay-badge bank">🏛</span>
+              <span class="pay-badge bank">&#127963;</span>
             </span>
           </label>
 
@@ -209,16 +210,16 @@
           <input type="checkbox" id="sameAddress" name="sameAddress" checked>
           <label for="sameAddress">My billing and contact addresses are the same</label>
         </div>
-      </div>
+      </fieldset>
 
       <!-- Make the most -->
-      <div class="donate-field-group">
-        <p class="donate-section-label">Make the most of my donation</p>
+      <fieldset class="donate-field-group">
+        <legend class="donate-section-label">Make the most of my donation</legend>
         <div class="donate-check">
           <input type="checkbox" id="coverFees" name="coverFees">
           <label for="coverFees">I want to add $1.50 to my monthly donation to help offset processing fees, so 100% of my contribution can benefit the organization.</label>
         </div>
-      </div>
+      </fieldset>
 
       <button type="submit" class="donate-submit">Review Donation</button>
 
@@ -312,16 +313,15 @@
     toggle.setAttribute('aria-expanded', String(!wrap.hidden));
   }
 
-  /* ── Enter key toggles checkboxes (prevents form submission) ── */
-  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        cb.checked = !cb.checked;
-        cb.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-    });
-  });
+  // Enter key toggles checkboxes - intercept at capture phase before form submission
+  document.getElementById('donateForm').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && e.target.type === 'checkbox') {
+      e.preventDefault();
+      e.stopPropagation();
+      e.target.checked = !e.target.checked;
+      e.target.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }, true);
 </script>
 </body>
 </html>

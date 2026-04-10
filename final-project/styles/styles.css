@@ -306,12 +306,13 @@ input:focus {
 /* Header */
 .donate-header {
   text-align: center;
+  height: 200px;
   margin-bottom: 32px;
 
 }
 
 .donate-logo {
-  height: 200px;
+  height: 250px;
   width: auto;
   margin-bottom: 12px;
 }
@@ -366,7 +367,7 @@ input:focus {
 }
 
 .required { color: #c0392b; }
-.optional { color: #888; font-weight: 400; font-size: 0.85rem; }
+.optional { color: black; font-weight: 400; font-size: 0.85rem; }
 
 /* Frequency toggle */
 .frequency-toggle {
@@ -599,10 +600,10 @@ textarea.donate-input { resize: vertical; }
 
 .pay-badge.visa     { background: #1a1f71; color: #fff; }
 .pay-badge.mc       { background: #eb001b; color: #fff; }
-.pay-badge.discover { background: #ff6600; color: #fff; }
+.pay-badge.discover { background: darkgreen; color: #fff; }
 .pay-badge.amex     { background: #2e77bc; color: #fff; }
 .pay-badge.paypal   { background: #003087; color: #fff; font-size: 0.75rem; padding: 3px 8px; }
-.pay-badge.venmo    { background: #3d95ce; color: #fff; font-size: 0.8rem; padding: 3px 8px; letter-spacing: 0.04em; }
+.pay-badge.venmo    { background: blue; color: #fff; font-size: 0.8rem; padding: 3px 8px; letter-spacing: 0.04em; }
 .pay-badge.bank     { background: #f0f0f0; color: #555; font-size: 1rem; padding: 2px 6px; }
 
 /* Select input */
@@ -616,4 +617,24 @@ textarea.donate-input { resize: vertical; }
   .address-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* Strip default fieldset styling so it matches div layout */
+.donate-card fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+ 
+.donate-card fieldset legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 8px;
+}
+ 
+/* Clear float after legend so content flows correctly */
+.donate-card fieldset legend + * {
+  clear: left;
 }
